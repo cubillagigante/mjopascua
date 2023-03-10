@@ -20,5 +20,8 @@
     .ti-user-circle {
         font-size: 6rem;
     }
+    .ti-circle-check-filled {
+      font-size: 10rem;
+    }
   </style>
 </head>

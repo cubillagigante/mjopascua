@@ -4,7 +4,7 @@
   $sqlColor = "SELECT * FROM color";
   $RColor = $mysqli->query($sqlColor);
   
-  $sql = "SELECT id_participante, nombre_apellido, ruta_img, descripcion FROM participante, color where participante.id_color = color.id_color";
+  $sql = "SELECT id_participante, nombre_apellido, ruta_img, descripcion FROM participante, color where participante.id_color = color.id_color ORDER BY id_participante DESC;";
   $resultado = $mysqli->query($sql);
 
 ?>
@@ -30,13 +30,15 @@
                 class="p-3 rounded-full w-full drop-shadow-lg text-center text-black" oninput="this.value = this.value.replace(/[^a-zA-Z\sñá-ú]/,'')"/>
                 
         </div>
-        <div class="h-full bg-[#fff] align-middle w-full">
-            <h1 class="text-3xl text-center font-bold">TEAM ROJO </h1>
+        <div class="flex justify-center w-96">
+            <img src="../../public/images/default/logo.png" class="rounded-full w-20"/>
             
         </div>
     </div>
-    <div class="ml-10 my-5">
+    <div class="ml-10 flex gap-5 my-5">
         <a class="btn p-3 px-5 text-white rounded-full" href="estadistica.php"><i class="ti ti-chart-pie-filled"></i></a>
+        <a class="btn p-3 px-5 text-white rounded-full" href="index.php"><i class="ti ti-clipboard-list"></i></a>
+        <a class="btn p-3 px-5 text-white rounded-full" href="../juego/index.php"><i class="ti ti-brand-apple-arcade"></i></a>
     </div>
     <div class="w-full text-white justify-center flex flex-wrap gap-5 text-sm mx-auto bg-[#AF3838] rounded-lg p-10">
         <?php while($row = $resultado->fetch_array(MYSQLI_ASSOC)) { ?>    

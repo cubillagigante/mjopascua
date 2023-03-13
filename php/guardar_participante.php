@@ -66,7 +66,7 @@
 	$fun = $rowc['link_grupo'];
 
 	
-	//header( "refresh:1; url=https://api.whatsapp.com/send/?phone=".$telefono."&text=Hola *".$nombre_apellido."* te envio el link del grupo: ".$fun."&type=phone_number&app_absent=0");
+	header( "refresh:1; url=https://api.whatsapp.com/send/?phone=".$telefono."&text=Hola *".$nombre_apellido."* te envio el link del grupo: ".$fun."&type=phone_number&app_absent=0");
 ?>
  
 <html lang="es">

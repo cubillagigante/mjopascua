@@ -1,32 +1,38 @@
-<div class="mx-auto rounded-full w-[20rem] grid grid-cols-5 ">
-    <div class="py-5 px-2 bg-[#AF3838] text-center ">
+
+
+
+<div id="container-buttons" class="mx-auto rounded-full w-[20rem] grid grid-cols-5 ">
+    <!--
+    <button id="btn-1" onclick="insertar(this)" class="py-5 px-2 bg-[#AF3838] text-center " value="A">
         A
-    </div>
-    <div class="py-5 bg-[#C64E4E] text-center">
+    </button>
+    <button id="btn-2" onclick="insertar(this)" class="py-5 bg-[#C64E4E] text-center" value="B">
         B
-    </div>
-    <div class="py-5 bg-[#AF3838] text-center">
+    </button>
+    <button id="btn-3" onclick="insertar(this)" class="py-5 bg-[#AF3838] text-center" value="C">
         C
-    </div>
-    <div class="py-5 bg-[#C64E4E] text-center">
+    </button>
+    <button id="btn-4" onclick="insertar(this)" class="py-5 bg-[#C64E4E] text-center" value="D">
         D
-    </div>
-    <div class="py-5 bg-[#AF3838] text-center">
+    </button>
+    <button id="btn-5" onclick="insertar(this)" class="py-5 bg-[#AF3838] text-center" value="e">
         E
-    </div>
-    <div class="py-5 bg-[#C64E4E] text-center">
+    </button>
+    <button id="btn-6" onclick="insertar(this)" class="py-5 bg-[#C64E4E] text-center" value="F">
         F
-    </div>
-    <div class="py-5 bg-[#AF3838] text-center">
+    </button>
+    <button id="btn-7" onclick="insertar(this)" class="py-5 bg-[#AF3838] text-center" value="G">
         G
-    </div>
-    <div class="py-5 bg-[#C64E4E] text-center">
+    </button>
+    <button id="btn-8" onclick="insertar(this)" class="py-5 bg-[#C64E4E] text-center" value="H">
         H
-    </div>
-    <div class="py-5 bg-[#AF3838] text-center">
+    </button>
+    <button id="btn-9" onclick="insertar(this)" class="py-5 bg-[#AF3838] text-center" value="I">
         I
-    </div>
-    <div class="py-5 bg-[#C64E4E] text-center">
-        J
-    </div>
+    </button>
+    <button id="btn-10" onclick="insertar(this)" class="py-5 bg-[#C64E4E] text-center" value="t">
+        t
+    </button>
+    -->
 </div>
+

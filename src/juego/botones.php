@@ -36,35 +36,55 @@
     
 </div>
 <script>
-    <?php
-        $sqlletra1 = "SELECT descripcion_letra FROM letra";
-        $Rletra1 = $mysqli->query($sqlletra1);
-    ?>
-    let nombre, a;
-    var co = 0;
-    for(let x=1; x<11;x++) {
-        nombre = "btn-"+ x;
-        a = document.getElementById(nombre);
+    
+    function color_letra() {
+        let res = document.getElementById("respuesta-check");
+        <?php
+            $sqlletra1 = "SELECT descripcion_letra FROM letra";
+            $Rletra1 = $mysqli->query($sqlletra1);
+        ?>
+        let nombre, a;
+        var co = 0;
+        for(let x=1; x<11;x++) {
+            nombre = "btn-"+ x;
+            a = document.getElementById(nombre);
+            <?php 
+            while($row5 = $Rletra1->fetch_array(MYSQLI_ASSOC)) {
+            ?>   
+                if (a.value == "<?php echo $row5['descripcion_letra']; ?>" ) {
+                    a.classList.remove("bg-[#AF3838]");
+                    a.classList.remove("bg-[#C64E4E]");
+                    a.classList.add("bg-gray-800");
+                    a.disabled = true; 
+                    co++;
+                }
+            <?php 
+            }
+            ?>
+        }
+        <?php
+
+        $sqlu1 = "SELECT descripcion_letra FROM letra ORDER BY id_letra DESC LIMIT 1";
+        $Ru1 = $mysqli->query($sqlu1);
+        $rowu1 = $Ru1->fetch_array(MYSQLI_ASSOC);
+        $ultimo = $rowu1['descripcion_letra'];
         
 
-        <?php 
-         while($row5 = $Rletra1->fetch_array(MYSQLI_ASSOC)) {
-        ?>   
-             if (a.value == "<?php echo $row5['descripcion_letra']; ?>" ) {
-                a.classList.remove("bg-[#AF3838]");
-                a.classList.remove("bg-[#C64E4E]");
-                a.classList.add("bg-gray-800");
-                a.disabled = true; 
-                co++;
-             }
-        <?php 
+        if (!in_array($ultimo, $array)) { 
+        ?>
+            console.log("hello");
+            res.innerHTML = '<div class="justify-center flex p-10"><i class="ti ti-xbox-x"></i></div>';
+        <?php
+        }else {
+        ?>
+
+            console.log("hello2");
+            res.innerHTML = '<div class="justify-center flex p-10"><i class="ti ti-circle-check-filled"></i></div>';
+        <?php
         }
         ?>
-        if (co == 10) {
-            
-        }
-        console.log(a.value);
     }
+    
 </script>
 
 

@@ -111,12 +111,9 @@ $contador = 0;
                     </div>
                     <div class="p-10 bg-[#02BEB9] text-[#482344] rounded-lg">
                         <h1 class="font-bold text-3xl text-center">La respuesta es: </h1>
-                        <?php if (!in_array($ultimo, $array)) {  ?>
-
-                        <div class="justify-center flex p-10"><i class="ti ti-xbox-x"></i></div>
-                        <?php } else {?>
-                        <div class="justify-center flex p-10"><i class="ti ti-circle-check-filled"></i></div>
-                        <?php } ?>
+                        <div id="respuesta-check">
+                        
+                        </div>
                     </div>
 
                 </section>
@@ -171,7 +168,9 @@ $contador = 0;
 </html>
 <script>
 var direction;
+color_letra();
 function insertar(boton) {
+    color_letra();
     console.log(window.location.href);
     boton.disabled = true;
     boton.style.backgroundColor = "#3E3737";
@@ -189,6 +188,7 @@ function insertar(boton) {
        }
         
        ?>
+       color_letra();
        location.reload();
    
     

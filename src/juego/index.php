@@ -5,6 +5,11 @@
  $Rpregunta = $mysqli->query($sqlpregunta);
  $row = $Rpregunta->fetch_array(MYSQLI_ASSOC);
 
+ $sqlu = "SELECT descripcion_letra FROM letra ORDER BY id_letra DESC LIMIT 1";
+ $Ru = $mysqli->query($sqlu);
+ $rowu = $Ru->fetch_array(MYSQLI_ASSOC);
+ $ultimo = $rowu['descripcion_letra'];
+
  $sqlletra = "SELECT descripcion_letra FROM letra";
  $Rletra = $mysqli->query($sqlletra);
 
@@ -12,8 +17,7 @@ $texto = $row['descripcion_palabra'];
 $palabra = str_replace("-","",$texto);
 $array = explode ( '-', $texto );
 $longitud = count($array);
-echo $palabra;
-
+$contador = 0;
 
 
 ?>
@@ -42,8 +46,20 @@ echo $palabra;
             <div class="flex">
                 <section class="w-full p-10">
                     <!-- imagen -->
-                    <div class="h-80 bg-[red] flex justify-center items-center mb-5">
-                        idasc
+                    <div class=" h-96 bg-[#689084] rounded-lg flex justify-center items-center mb-5">
+                        <div class=" relative w-[14em] h-full">
+                            <?php if($contador == 1) { echo 'hola';?>
+                                
+                                <img src="../../public/images/default/head.svg" class="absolute left-14 z-20 top-2 right-10" alt="">
+                            <?php } ?>
+                            <img src="../../public/images/default/brazo_i.svg" class="absolute left-0 top-20 hidden" alt="">
+                            <img src="../../public/images/default/brazo_d.svg" class="absolute right-0 top-20 hidden" alt="">
+                            <img src="../../public/images/default/pecho.svg" class="absolute left-11 z-10 top-12 hidden" alt="">
+                            <img src="../../public/images/default/legs.svg" class="absolute left-5 bottom-10 hidden" alt="">  
+                            <img src="../../public/images/default/ceniza.svg" class="absolute bottom-2" alt="">  
+                            
+                        </div>
+                        
                     </div>
                     <!-- botones -->
                     <?php include 'botones.php'; ?>
@@ -57,8 +73,8 @@ echo $palabra;
                         $co = 0;
                          while($rowl = $Rletra->fetch_array(MYSQLI_ASSOC)) { 
                             $letra = $rowl['descripcion_letra'];
-                            
-                            
+                       
+                        
                             for ($i = 0; $i < $longitud ; $i++) {
                                
                                 
@@ -81,7 +97,7 @@ echo $palabra;
                                 
                         }
                         for ($i = 0; $i < $longitud; $i++) {
-
+                            
                         ?>
                         <h1 class="font-bold text-3xl text-center ">
                             <?php echo $aux[$i]; ?>
@@ -95,7 +111,12 @@ echo $palabra;
                     </div>
                     <div class="p-10 bg-[#02BEB9] text-[#482344] rounded-lg">
                         <h1 class="font-bold text-3xl text-center">La respuesta es: </h1>
-                        <div class="justify-center flex p-10"><i class="ti ti-circle-check-filled"></i></div>
+                        <?php echo $contador; if (!in_array($ultimo, $array)) {  ?>
+                            
+                            <div class="justify-center flex p-10"><i class="ti ti-xbox-x"></i></div>
+                        <?php } else {?>
+                            <div class="justify-center flex p-10"><i class="ti ti-circle-check-filled"></i></div>
+                        <?php $contador++; } ?>
                     </div>
 
                 </section>
@@ -109,72 +130,7 @@ echo $palabra;
 
 </html>
 <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            
-            <?php 
-                $caracteres = "abcdefghijklmnopqrstuvwxyz";
-                    
-                $arrPassResult=array();
-                $index=0;
-                $cantidad =26;
-                $tmp = "";
-                while($index<$cantidad){
-                    $tmp=$caracteres[rand(0,strlen($caracteres)-1)];
-                    if(!in_array($tmp, $arrPassResult)) {
-                        $arrPassResult[]=$tmp;
-
-                    } 
-                    $index++;
-                }
-                for ($i = 0; $i < $longitud; $i++) {
-                    
-                    $tmp1=rand(0,strlen($palabra));
-                    $tmp =$arrPassResult[$tmp1];
-                   
-                    if (!in_array($tmp, $array)) {
-                        $arrPassResult[$tmp1] = $array[$i];
-                    } else {
-                        $co++;
-                        $index1 = 0;
-                        while ($index1<$longitud) {
-                            $tmp1=rand(0,strlen($palabra));
-                            $tmp =$arrPassResult[$tmp1];
-                         
-                            if (!in_array($tmp, $array)) {
-                                break;
-                            }
-                            $index1++;
-                        }
-                        $arrPassResult[$tmp1] = $array[$i];
-                    }
-                    
-                }
-                for ($i = 0; $i < 15; $i++) {   
-        
-            ?>
-            var button = document.createElement('input');
-            button.type = 'button';
-            cLetra = "<?php echo  $arrPassResult[$i]; ?>";
-            button.id = 'submit';
-           <?php if (($i%2)==0) { ?>
-                button.className = 'py-5 bg-[#AF3838] text-center cursor-pointer';
-           <?php } else { ?>
-                button.className = 'py-5 bg-[#C64E4E] text-center cursor-pointer';
-               
-           <?php } ?>
-            
-            console.log(cLetra);
-            button.value = cLetra;
-
-            button.onclick =insertar();
-        
-            var container = document.getElementById('container-buttons');
-            container.appendChild(button);
-            <?php
-            }
-            
-            ?>
-        }, false);
+    
     
     function insertar(boton) {
        console.log( window.location.href);

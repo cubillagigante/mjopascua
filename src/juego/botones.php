@@ -3,23 +3,23 @@
 
 <div id="container-buttons" class="mx-auto rounded-full w-[20rem] grid grid-cols-5 ">
 
-    <button id="btn-1" onclick="insertar(this)" class="py-5 px-2 bg-[#AF3838] text-center " value="a">
-        A
+    <button id="btn-1" onclick="insertar(this)" class="py-5 px-2 bg-[#AF3838] text-center " value="o">
+        O
     </button>
     <button id="btn-2" onclick="insertar(this)" class="py-5 bg-[#C64E4E] text-center" value="b">
         B
     </button>
     <button id="btn-3" onclick="insertar(this)" class="py-5 bg-[#AF3838] text-center" value="c">
-        c
+        C
     </button>
     <button id="btn-4" onclick="insertar(this)" class="py-5 bg-[#C64E4E] text-center" value="d">
         D
     </button>
     <button id="btn-5" onclick="insertar(this)" class="py-5 bg-[#AF3838] text-center" value="l">
-        l
+        L
     </button>
-    <button id="btn-6" onclick="insertar(this)" class="py-5 bg-[#C64E4E] text-center" value="f">
-        F
+    <button id="btn-6" onclick="insertar(this)" class="py-5 bg-[#C64E4E] text-center" value="n">
+        N
     </button>
     <button id="btn-7" onclick="insertar(this)" class="py-5 bg-[#AF3838] text-center" value="g">
         G
@@ -27,11 +27,11 @@
     <button id="btn-8" onclick="insertar(this)" class="py-5 bg-[#C64E4E] text-center" value="h">
         H
     </button>
-    <button id="btn-9" onclick="insertar(this)" class="py-5 bg-[#AF3838] text-center" value="i">
-        I
+    <button id="btn-9" onclick="insertar(this)" class="py-5 bg-[#AF3838] text-center" value="e">
+        E
     </button>
     <button id="btn-10" onclick="insertar(this)" class="py-5 bg-[#C64E4E] text-center" value="t">
-        t
+        T
     </button>
     
 </div>

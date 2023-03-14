@@ -38,6 +38,7 @@
 <script>
     
     function color_letra() {
+        
         let res = document.getElementById("respuesta-check");
         <?php
             $sqlletra1 = "SELECT descripcion_letra FROM letra";
@@ -48,6 +49,7 @@
         for(let x=1; x<11;x++) {
             nombre = "btn-"+ x;
             a = document.getElementById(nombre);
+            console.log(a.value);
             <?php 
             while($row5 = $Rletra1->fetch_array(MYSQLI_ASSOC)) {
             ?>   
@@ -58,6 +60,7 @@
                     a.disabled = true; 
                     co++;
                 }
+                
             <?php 
             }
             ?>
@@ -72,7 +75,6 @@
 
         if (!in_array($ultimo, $array)) { 
         ?>
-            console.log("hello");
             res.innerHTML = '<div class="justify-center flex p-10"><i class="ti ti-xbox-x"></i></div>';
         <?php
         }else {
@@ -83,6 +85,7 @@
         <?php
         }
         ?>
+
     }
     
 </script>

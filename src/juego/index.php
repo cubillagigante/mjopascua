@@ -167,16 +167,13 @@ $contador = 0;
 
 </html>
 <script>
-var direction;
+
 color_letra();
 function insertar(boton) {
-    color_letra();
     console.log(window.location.href);
-    boton.disabled = true;
-    boton.style.backgroundColor = "#3E3737";
 
     letra_p = boton.value;
-    direction =  window.location.href;
+   
     window.location.href = window.location.href + "?v=" + letra_p;
     <?php 
        if (isset($_GET["v"])) {
@@ -188,11 +185,7 @@ function insertar(boton) {
        }
         
        ?>
-       color_letra();
-       location.reload();
-   
-    
-    
-
+      window.location.href = window.location.href;
+      
 }
 </script>

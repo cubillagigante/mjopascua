@@ -10,7 +10,7 @@
 <?php include 'head.php'; ?>
 <body class="bg-[#482344]">
     <div class="w-3/4 text-white mt-10 rounded-lg text-sm mx-auto bg-[#AF3838] p-10">
-        <div class="mb-2 flex gap-5 flex-row  relative mb-5">
+        <div class=" flex gap-5 flex-row  relative mb-5">
                    
             <a href="estadistica.php">
                 

@@ -24,6 +24,7 @@
     .ti-circle-check-filled, .ti-xbox-x {
       font-size: 10rem;
     }
+    
      
   </style>
 </head>

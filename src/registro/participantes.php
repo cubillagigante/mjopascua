@@ -38,7 +38,7 @@
     <div class="ml-10 flex gap-5 my-5">
         <a class="btn p-3 px-5 text-white rounded-full" href="asistencia.php"><i class="ti ti-clipboard-list"></i></a>
         <a class="btn p-3 px-5 text-white rounded-full" href="estadistica.php"><i class="ti ti-chart-pie-filled"></i></a>
-        <a class="btn p-3 px-5 text-white rounded-full" href="../juego/index.php"><i class="ti ti-brand-apple-arcade"></i></a>
+        <a class="btn p-3 px-5 text-white rounded-full" href="../juego/menu.php"><i class="ti ti-brand-apple-arcade"></i></a>
         <a class="btn p-3 px-5 text-white rounded-full" href="index.php"><i class="ti ti-pencil"></i></a>
         
     </div>

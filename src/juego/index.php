@@ -31,7 +31,7 @@ $contador = 0;
             <nav class="flex flex-row">
                 <div class=" flex gap-5 flex-row  relative mb-5">
 
-                    <a href="../registro/participantes.php">
+                    <a href="menu.php">
 
                         <div class="btn rounded-full w-20 flex justify-center p-3">
                             <i class="ti ti-arrow-back-up"></i>

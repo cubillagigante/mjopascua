@@ -3,7 +3,7 @@
   <title>MJO - PASCUA</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../../public/tailwind.css" >
+  <link rel="stylesheet" href="../../public/css/tailwind.css" >
   <link rel="stylesheet" href="../../webfont/tabler-icons.css">
   <style type="text/css">
    .btn {
@@ -18,9 +18,10 @@
     .ti {
         font-size: 1.25rem;
     }
-    .ti-user-circle {
+    .ti-user-circle, .ti-puzzle, .ti-sunset-2, .ti-circle-check, .ti-exclamation-circle, .ti-arrow-big-right-filled {
         font-size: 6rem;
     }
+    
     .ti-circle-check-filled, .ti-xbox-x {
       font-size: 10rem;
     }

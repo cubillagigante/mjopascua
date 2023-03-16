@@ -16,7 +16,7 @@
     <div class="w-full text-white text-sm mx-auto bg-[#AF3838] p-10">
         <div class="mb-2 flex gap-5 flex-row  relative">
                    
-            <a href="participantes.php">
+            <a href="participantes.php?color=1">
                 
                 <div class="btn rounded-full w-20 flex justify-center p-3">
                     <i class="ti ti-arrow-back-up"></i>

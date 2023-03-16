@@ -74,7 +74,7 @@
                             <i class="ti ti-trash "><input id="clean" name="clean" type="reset" value=""/></i>
                         </div>
                     </label>
-                    <a href="participantes.php">
+                    <a href="participantes.php?color=1">
                         
                         <div class="btn rounded-full w-20 flex justify-center p-3">
                             <i class="ti ti-arrow-back-up"></i>

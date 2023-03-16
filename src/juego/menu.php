@@ -12,7 +12,7 @@
             <nav class="flex flex-row mb-10">
                 <div class=" flex gap-5 flex-row  relative mb-5">
 
-                    <a href="../registro/participantes.php">
+                    <a href="../registro/participantes.php?color=1">
 
                         <div class="btn rounded-full w-20 flex justify-center p-3">
                             <i class="ti ti-arrow-back-up"></i>

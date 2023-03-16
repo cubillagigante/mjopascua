@@ -13,20 +13,14 @@
         <div class="flex justify-between">
             <div class="flex gap-5 flex-row  relative mb-5">
 
-                <a href="estadistica.php">
+                <a href="participantes.php?color=1">
 
                     <div class="btn rounded-full w-20 flex justify-center p-3">
                         <i class="ti ti-arrow-back-up"></i>
                     </div>
 
                 </a>
-                <a href="participantes.php">
-
-                    <div class="btn rounded-full w-20 flex justify-center p-3">
-                        <i class="ti ti-home-2"></i>
-                    </div>
-
-                </a>
+               
             </div>
             <div class="">
                 <div class="form-group flex">

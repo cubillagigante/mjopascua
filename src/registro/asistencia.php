@@ -25,7 +25,7 @@
             <div class="">
                 <div class="form-group flex">
                     <label for="my-select"> <h1 class="text-xl  mr-5">Fecha:</h1> </label>
-                    <select onchange="dias()" id="my-select" class="form-control text-center w-40 p-2 text-black rounded-full" name="">
+                    <select id="my-select" class="form-control text-center w-40 p-2 text-black rounded-full" name="">
                         <option value="0">2023/04/06</option>
                         <option value="1">2023/04/07</option>
                         <option value="2">2023/04/08</option>

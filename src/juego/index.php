@@ -160,7 +160,7 @@ $contador = 0;
             </div>
 
         </div>
-        <?php include 'puntaje.php'; ?>
+        
     </div>
 
 </body>
@@ -186,6 +186,6 @@ function insertar(boton) {
         
        ?>
       window.location.href = window.location.href;
-      
+      color_letra();
 }
 </script>

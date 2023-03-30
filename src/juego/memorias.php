@@ -36,10 +36,10 @@
                 <section class="w-full p-10 order-2">
                     <!-- tabla de puntajes -->
 
-                    <div class="p-10 flex justify-center gap-5 bg-[#02BEB9] text-[#482344] rounded-lg mb-10">
-                        <?php while($rowpregunta = $resultadopregunta->fetch_array(MYSQLI_ASSOC)) { ?>
-                            <h1 class="font-bold text-2xl"><?php echo $rowpregunta['descripcion_pregunta']; ?> </h1>
-                        <?php } ?>
+                    <div id="pregunta" class="p-10 flex justify-center gap-5 bg-[#02BEB9] text-[#482344] rounded-lg mb-10">
+                        
+                        <h1 class="font-bold text-2xl"> ... </h1>
+                        
                     </div>
                     <div class="flex justify-between">
                         <div class="text-white items-center bg-[#482344] rounded-lg  justify-center text-center text-2xl px-10 grid p-5 ">
@@ -80,7 +80,7 @@
             </div>
 
         </div>
-        <?php include 'puntaje.php'; ?>
+       
     </div>
 
 </body>
@@ -113,6 +113,7 @@
         n = 1;
         var conta = document.getElementById("number");
         var img_p = document.getElementById("img-p");
+        var titulo = document.getElementById("pregunta");
        /* window.setInterval(function(){
             conta.innerHTML = '<h1 class="font-bold text-2xl">00 : 0'+n+' seg</h1>';
             n++;
@@ -123,7 +124,12 @@
         <?php while($rowimg = $resultado1->fetch_array(MYSQLI_ASSOC)) { ?>
                             
             img_p.innerHTML = '<img src="../../public/images/default/<?php echo $rowimg['img_nombre']; ?>" class="object-cover rounded-lg h-full w-full">';
+            
         <?php } ?>
+        <?php while($rowpregunta = $resultadopregunta->fetch_array(MYSQLI_ASSOC)) { ?>
+            titulo.innerHTML =  '<h1 class="font-bold text-2xl"><?php echo $rowpregunta['descripcion_pregunta']; ?> </h1>';
+        <?php } ?>
+
         var id = setInterval(function(){
             console.log(n);
             conta.innerHTML = '<h1 class="font-bold text-2xl">00 : 0'+n+' seg</h1>';

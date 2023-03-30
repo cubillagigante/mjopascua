@@ -1,10 +1,11 @@
 <?php 
  require '../../php/conexion.php';
- $sqlpregunta = "SELECT * FROM pregunta where id_pregunta = 1";
+ $id = $_GET['id'];
+ $sqlpregunta = "SELECT * FROM pregunta where id_pregunta = $id";
  $resultadopregunta = $mysqli->query($sqlpregunta);
  $resultado1 = $mysqli->query($sqlpregunta);
 
- $sql = "SELECT * FROM respuesta where id_pregunta = 1";
+ $sql = "SELECT * FROM respuesta where id_pregunta = $id";
  $resultado = $mysqli->query($sql);
  
 
@@ -68,13 +69,20 @@
                     <div id="img-p" class=" h-96 bg-[#689084] shadow shadow-emerald-600 rounded-lg flex justify-center items-center mb-10">
                         
                     </div>
-                    <div class="flex items-center gap-5 bg-[#673a63] rounded-full w-[20em] text-center">
-                        <div onclick="contador()" class="cursor-pointer bg-[#482344] rounded-full w-20 flex justify-center p-5">
-                            <i class="ti ti-clock-hour-12"></i>
+                    <div class="flex justify-between">
+                        <div class="flex items-center gap-5 bg-[#673a63] rounded-full w-[20em] text-center">
+                            <div onclick="contador()" class="cursor-pointer bg-[#482344] rounded-full w-20 flex justify-center p-5">
+                                <i class="ti ti-clock-hour-12"></i>
+                            </div>
+                            <div id="number">
+                                <h1 class="font-bold text-2xl">00 : 00 seg</h1>
+                            </div>
                         </div>
-                        <div id="number">
-                            <h1 class="font-bold text-2xl">00 : 00 seg</h1>
-                        </div>
+                        <a href="memorias.php?id=2">
+                            <div class="btn rounded-full w-20 flex justify-center p-3">
+                                <i class="ti ti-player-track-next-filled"></i>
+                            </div>
+                        </a>
                     </div>
                 </section>
             </div>

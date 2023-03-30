@@ -61,7 +61,8 @@
                     </thead>
                     <tbody id="cuerpo">
                         <?php $con=0; while($row = $Rparticipante->fetch_array(MYSQLI_ASSOC)) { $con++;?>
-                        <tr class="bg-white border-b hover:bg-gray-400 font-bold hover:text-white text-xl dark:border-gray-700">
+                        <tr
+                            class="bg-white border-b hover:bg-gray-400 font-bold hover:text-white text-xl dark:border-gray-700">
                             <td class="px-6 py-4">
                                 <?php echo $row['id_participante']; ?>
                             </td>
@@ -78,42 +79,33 @@
 
 
                                 <label class="content-input">
-                                    
+
                                     <input onclick="seleccion(this,<?php echo $row['id_participante']; ?>)"
-                                        type="checkbox" value="<?php echo $row['dia1']; ?>" name="Vehiculo"
-                                        id="1"
-                                    <?php 
+                                        type="checkbox" value="<?php echo $row['dia1']; ?>" name="Vehiculo" id="1" <?php 
                                     if($row['dia1']  == 1) {
                                         echo 'checked';
-                                    }?>
-                                    >
+                                    }?>>
                                     DIA1
                                     <i></i>
-                                    
+
                                 </label>
 
                                 <label class="content-input">
                                     <input onclick="seleccion(this,<?php echo $row['id_participante']; ?>)"
-                                        type="checkbox" value="<?php echo $row['dia2']; ?>" name="Vehiculo"
-                                        id="2"
-                                    <?php 
+                                        type="checkbox" value="<?php echo $row['dia2']; ?>" name="Vehiculo" id="2" <?php 
                                     if($row['dia2']  == 1) {
                                         echo 'checked';
-                                    }?>    
-                                    >
+                                    }?>>
                                     DIA2
                                     <i></i>
                                 </label>
 
-                                <label  class="content-input">
+                                <label class="content-input">
                                     <input onclick="seleccion(this,<?php echo $row['id_participante']; ?>)"
-                                        type="checkbox" value="<?php echo $row['dia3']; ?>" name="Vehiculo"
-                                        id="3"
-                                    <?php 
+                                        type="checkbox" value="<?php echo $row['dia3']; ?>" name="Vehiculo" id="3" <?php 
                                     if($row['dia3']  == 1) {
                                         echo 'checked';
-                                    }?>    
-                                    >
+                                    }?>>
                                     DIA3
                                     <i></i>
                                 </label>
@@ -144,18 +136,7 @@
             <input id="fecha" name=fecha type=hidden value="123" />
 
             <div class="w-full flex justify-between">
-                <div class=" p-2"></div>
-                <label for="btn-ok">
-                    <div class="btn rounded-full w-20 flex justify-center p-3">
-                        <i class="ti ti-device-floppy"></i><input type="submit" id="btn-ok" name="btn-ok" value="" />
-                    </div>
-                </label>
-                <label for="btn-refresh">
-                    <div class="btn rounded-full w-20 flex justify-center p-3">
-                        <i class="ti ti-refresh"></i><input type="button" id="btn-refresh" onclick="location.reload()"
-                            name="btn-refresh" value="" />
-                    </div>
-                </label>
+
             </div>
         </form>
 
@@ -164,19 +145,17 @@
 
 </html>
 <script>
-
-
-
 function seleccion(checkeado, id_p) {
     console.log(checkeado.id);
 
-    if(checkeado.value == 1) {
-        window.location.href = "../../php/guardar_asistencia.php?id_participante=" + id_p + "&dia="+checkeado.id +"&valor="+0;
+    if (checkeado.value == 1) {
+        window.location.href = "../../php/guardar_asistencia.php?id_participante=" + id_p + "&dia=" + checkeado.id +
+            "&valor=" + 0;
     } else {
-        window.location.href = "../../php/guardar_asistencia.php?id_participante=" + id_p + "&dia="+checkeado.id +"&valor="+1;
+        window.location.href = "../../php/guardar_asistencia.php?id_participante=" + id_p + "&dia=" + checkeado.id +
+            "&valor=" + 1;
     }
-    
-    
-}
 
+
+}
 </script>

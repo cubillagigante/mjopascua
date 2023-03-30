@@ -35,7 +35,7 @@
                         <h1 class="mt-7 text-3xl font-bold">LA CREACION</h1>
                     </div>
                 </a>
-                <a href="memorias.php">
+                <a href="memorias.php?id=1">
                     <div class="px-24 py-14 shadow-xl hover:bg-[#a1ad1fee] bg-slate-500 rounded-lg text-center">
                         <i class="ti ti-puzzle"></i>
                         <h1 class="mt-7 text-3xl font-bold">MEMORIAS</h1>

@@ -8,6 +8,7 @@
   
 
   $id = $_GET["color"];
+  
   $sqlc = "SELECT a.id_participante,a.nombre_apellido,a.ruta_img,b.descripcion FROM participante a inner join color b on(a.id_color = b.id_color) where a.id_color = $id ORDER BY a.id_participante DESC";
   $resultado = $mysqli->query($sqlc);
 
@@ -25,7 +26,7 @@
             <h1 class=" text-center font-bold">COLOR: </h1>
             <select onchange="buscarC(this)" id="color" name="id_color" class="p-3 rounded-full w-full drop-shadow-lg text-center text-black">
                 <option value="0">
-                    seleccione un color
+                    <?php echo $rowcol['descripcion']; ?>
                 </option>
                 <?php while($row = $RColor->fetch_array(MYSQLI_ASSOC)) { ?>
                     

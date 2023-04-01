@@ -31,7 +31,7 @@
                 
             </a>
         </div>
-        <div class="grid mb-8 border-gray-200 rounded-lg rounded-l-lg dark:border-gray-700 md:mb-12 md:grid-cols-2">
+        <div class="grid mb-8 border-gray-200 rounded-lg rounded-l-lg  md:mb-12 md:grid-cols-2">
             <?php while($row = $RColor->fetch_array(MYSQLI_ASSOC)) { 
                 
                 $id = $row['id_color'];   
@@ -44,7 +44,7 @@
                 $rowRf = $Rf->fetch_array(MYSQLI_ASSOC);
             ?>
             
-            <figure class="flex flex-col items-center justify-center p-8 text-center bg-gray-800 border-b border-gray-200m md:border-r  dark:border-gray-700">
+            <figure class="flex flex-col items-center justify-center p-8 text-center ">
                 <div class="w-full bg-[#482344] text-white font-bold p-2 rounded-lg">
                     <h1 class=""><?php echo $row['descripcion'];?></h1>
                 </div>
@@ -52,14 +52,14 @@
                         
                         <div class="overflow-hidden rounded-lg ">
                             
-                            <canvas class="ojo p-10" id="chartPie<?php echo $co ?>"></canvas>
+                            <canvas class="ojo text-white p-10" id="chartPie<?php echo $co ?>"></canvas>
                             <div class="inline-flex rounded-md shadow-sm mb-5" role="group">
-                                <button type="button" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-l-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 ">
+                                <button type="button" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-[#02BEB9] border border-gray-200 rounded-l-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 ">
                                     <i class="ti ti-man" ></i>
                                     <?php echo $rowRm['masculino']; $arra[$co] = $rowRm['masculino']; $arraM[$co] = $rowRf['femenino'];; ?>
                                 </button>
                             
-                                <button type="button" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-r-md hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 ">
+                                <button type="button" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-[#482344] border border-gray-200 rounded-r-md hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 ">
                                     <i class="ti ti-woman" ></i>
                                     <?php echo $rowRf['femenino']; ?>
                                 </button>
@@ -80,7 +80,7 @@
   <?php for ( $i = 0; $i < $co; $i++) {?>
     
     var dataPie = {
-        labels: ["Masculino", "Femenino"],
+        labels: ["", ""],
         datasets: [
         {
             label: "cantidad de personas",

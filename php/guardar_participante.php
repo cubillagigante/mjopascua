@@ -95,13 +95,13 @@
 					<div class="mb-5">
 						<i class="ti ti-circle-check-filled"></i>    
 					</div>
-					<div>
-						<h1 class=" font-bold"> PARTICIPANTE GUARDADO CON EXITO! </h1>
+					<div class="rounded-lg">
+						<h1 class=" font-bold text-white"> PARTICIPANTE GUARDADO CON EXITO! </h1>
 					</div>
 					
 						
 				</div>
-				<i>seras redirigido a whatsapp en unos segundos ...</i>
+				<i class="text-white">seras redirigido a whatsapp en unos segundos ...</i>
 			</div>
 
 		</section>

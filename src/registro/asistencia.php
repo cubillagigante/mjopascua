@@ -1,8 +1,28 @@
 <?php 
  require '../../php/conexion.php';
+  $id_color = $_GET['color'];
+  $sqlColor = "SELECT id_color, descripcion FROM color";
+  $RColor = $mysqli->query($sqlColor);
+  $and = '';
+  if(!empty($_POST))
+  {
+    $valor = $_POST['nombre_apellido'];
+    if(!empty($valor)){
+      $and = "and a.nombre_apellido LIKE '%$valor%'";
+    }
+  }
+
+  $sqlparticipante = "SELECT a.id_participante, a.nombre_apellido, b.descripcion,a.dia1, a.dia2, a.dia3 FROM participante a INNER JOIN color b ON(a.id_color = b.id_color) where a.id_color = $id_color $and";
+  $Rparticipante = $mysqli->query($sqlparticipante);
   
- $sqlparticipante = "SELECT a.id_participante, a.nombre_apellido, b.descripcion,a.dia1, a.dia2, a.dia3 FROM participante a INNER JOIN color b ON(a.id_color = b.id_color)";
- $Rparticipante = $mysqli->query($sqlparticipante);
+ 
+ 
+  $sqlcolor1 = "SELECT descripcion FROM color where id_color = $id_color";
+  $resultadocolor1 = $mysqli->query($sqlcolor1);
+  $rowcol = $resultadocolor1->fetch_array(MYSQLI_ASSOC);
+ 
+  
+  
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,15 +42,37 @@
                 </a>
 
             </div>
+            <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
+                <div class=" w-80 flex items-center mb-5 gap-5">
+
+                    <h1 class=" text-xl">Nombre: </h1>
+                    <input id="nombre_apellido" type="text" name="nombre_apellido" placeholder="Ej: Viviana Barrios"
+                        class="p-2 rounded-full w-full text-center text-black"
+                        oninput="this.value = this.value.replace(/[^a-zA-Z\sñá-ú]/,'')" />
+                    <label for="buscar">
+                        <div class="btn rounded-full w-15 flex justify-center p-3">
+                            <input id="buscar" class="" type="submit" value="" /><i class="ti ti-search"></i>
+                        </div>
+                    </label>
+
+                </div>
+            </form>
             <div class="">
+
                 <div class="form-group flex">
                     <label for="my-select">
-                        <h1 class="text-xl  mr-5">Fecha:</h1>
+                        <h1 class="text-xl  mr-5">Color: </h1>
                     </label>
-                    <select id="my-select" class="form-control text-center w-40 p-2 text-black rounded-full" name="">
-                        <option value="0">2023/04/06</option>
-                        <option value="1">2023/04/07</option>
-                        <option value="2">2023/04/08</option>
+                    <select onchange="buscarC(this)" id="my-select"
+                        class="form-control text-center w-40 p-2 text-black rounded-full" name="">
+                        <option value="0">
+                            <?php echo $rowcol['descripcion']; ?>
+                        </option>
+                        <?php while($row = $RColor->fetch_array(MYSQLI_ASSOC)) { ?>
+                        <option value="<?php echo $row['id_color']; ?>">
+                            <?php echo $row['descripcion']; ?>
+                        </option>
+                        <?php } ?>
                     </select>
                 </div>
             </div>
@@ -60,7 +102,7 @@
                         </tr>
                     </thead>
                     <tbody id="cuerpo">
-                        <?php $con=0; while($row = $Rparticipante->fetch_array(MYSQLI_ASSOC)) { $con++;?>
+                        <?php  $con=0; while($row = $Rparticipante->fetch_array(MYSQLI_ASSOC)) { $con++;?>
                         <tr
                             class="bg-white border-b hover:bg-gray-400 font-bold hover:text-white text-xl dark:border-gray-700">
                             <td class="px-6 py-4">
@@ -150,12 +192,16 @@ function seleccion(checkeado, id_p) {
 
     if (checkeado.value == 1) {
         window.location.href = "../../php/guardar_asistencia.php?id_participante=" + id_p + "&dia=" + checkeado.id +
-            "&valor=" + 0;
+            "&valor=" + 0 + "&color=<?php echo $id_color; ?>";
     } else {
         window.location.href = "../../php/guardar_asistencia.php?id_participante=" + id_p + "&dia=" + checkeado.id +
-            "&valor=" + 1;
+            "&valor=" + 1 + "&color=<?php echo $id_color; ?>";
     }
+}
 
-
+function buscarC(datos) {
+    console.log(datos.value);
+    var contenido = document.getElementById('contenido');
+    window.location.href = "asistencia.php?color=" + datos.value;
 }
 </script>

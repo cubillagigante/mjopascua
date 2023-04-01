@@ -1,6 +1,18 @@
 <?php
   require '../../php/conexion.php';
-  
+  session_start();
+  $usuario_sesion = $_SESSION['user'];
+  $id_usuario = $_SESSION['id_login'];
+  $tipo_user = $_SESSION['status'];
+
+  if(!isset($usuario_sesion))
+  {
+    header("location: ../login/index.php");
+  }elseif($tipo_user != 2){
+    header("location: carga_puntaje.php");
+  } 
+
+
   $sqlColor = "SELECT * FROM deuda ORDER BY monto DESC";
   $RColor = $mysqli->query($sqlColor);
  
@@ -15,6 +27,11 @@
         <div class="lg:w-2/4 w-full text-white rounded-lg text-sm  bg-[#EFE4AB] lg:p-10">
 
             <div class="w-full bg-[#AF3838] p-5 lg:rounded-lg text-center mb-5">
+                <a href="../../php/exit.php">
+                    <div class="p-2 rounded-lg bg-white text-black">
+                        Admin <i class="ti ti-door-exit"></i>
+                    </div>
+                </a>
                 <img src="../../public/images/default/logo.png" class="rounded-full w-20 mx-auto p-2 mb-5" />
                 <form action="../../php/guardar_deuda.php" method="post">
                     <div class="flex gap-5 items-center justify-center mb-5">

@@ -1,6 +1,17 @@
 <?php
   require '../../php/conexion.php';
+  session_start();
+  $usuario_sesion = $_SESSION['user'];
+  $id_usuario = $_SESSION['id_login'];
+  $tipo_user = $_SESSION['status'];
   
+  if(!isset($usuario_sesion))
+  {
+    header("location: ../login/index.php");
+  }elseif($tipo_user != 1){
+    header("location: deuda.php");
+  } 
+
   $sqlColor = "SELECT * FROM color ORDER BY puntaje DESC";
   $RColor = $mysqli->query($sqlColor);
  
@@ -15,7 +26,13 @@
         <div class="lg:w-2/4 w-full text-white rounded-lg text-sm  bg-[#EFE4AB] lg:p-10">
 
             <div class="w-full bg-[#AF3838] p-5 lg:rounded-lg text-center mb-5">
+            <a href="../../php/exit.php">
+                <div class="p-2 rounded-lg bg-white text-black">
+                    Admin <i class="ti ti-door-exit"></i>
+                </div>
+            </a>
             <img src="../../public/images/default/logo.png" class="rounded-full w-20 mx-auto p-2 mb-5"/>
+
                 <table class=" w-full text-sm rounded-lg text-left text-[#EFE4AB]">
 
                     <thead class=" rounded-lg text-[#EFE4AB] text-xl border-b  uppercase text-center  ">

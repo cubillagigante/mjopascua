@@ -3,6 +3,7 @@ require 'conexion.php';
 $id = $_GET['id_participante'];
 $dia = $_GET['dia'];
 $valor = $_GET['valor'];
+$color = $_GET['color'];
 
     if ($dia == 1) {
         $sql = "UPDATE participante SET dia1 = $valor WHERE id_participante = '$id' ";
@@ -15,6 +16,6 @@ $valor = $_GET['valor'];
         $resultado = $mysqli->query($sql);
     }
     
-    header("location: ../src/registro/asistencia.php");
+    header("location: ../src/registro/asistencia.php?color=$color");
 
 ?>

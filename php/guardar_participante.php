@@ -12,8 +12,8 @@
 	
 	
 	 
-  	$sql = "INSERT INTO participante(nombre_apellido, telefono, encargado, telefono_emergencia, id_sexo, id_color, ruta_img) VALUES 
-	('$nombre_apellido', '$telefono', '$encargado', '$telefono_emergencia', '$id_sexo', '$id_color','vacio')";
+  	$sql = "INSERT INTO participante(nombre_apellido, telefono, encargado, telefono_emergencia, id_sexo, id_color, ruta_img, dia1, dia2, dia3) VALUES 
+	('$nombre_apellido', '$telefono', '$encargado', '$telefono_emergencia', '$id_sexo', '$id_color','vacio', 0, 0, 0)";
 	$resultado = $mysqli->query($sql);
 	
 	$id_insert = $mysqli->insert_id;

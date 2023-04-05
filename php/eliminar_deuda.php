@@ -4,7 +4,7 @@
  
 	$id = $_GET['id'];
 	
-	$sql = "DELETE FROM deuda WHERE id_deuda = '$id'";
+	$sql = "UPDATE deuda SET actividad = 0 WHERE id_deuda = '$id'";
 	$resultado = $mysqli->query($sql);
 
 	header("location: ../src/registro/deuda.php");

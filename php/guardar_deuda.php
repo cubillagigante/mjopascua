@@ -6,8 +6,8 @@
 	$deuda = $_POST['deuda'];
 	
 	 
-  	$sql = "INSERT INTO deuda(nombre_deuda, monto) VALUES 
-	('$nombre_apellido', '$deuda')";
+  	$sql = "INSERT INTO deuda(nombre_deuda, monto, actividad) VALUES 
+	('$nombre_apellido', '$deuda', 1)";
 	$resultado = $mysqli->query($sql);
 	
 

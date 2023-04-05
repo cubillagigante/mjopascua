@@ -53,8 +53,9 @@
 
                         </div>
                         <div class="p-10 w-full bg-[#02BEB9] text-[#482344] rounded-lg">
-                            <div id="respuesta-check" class="grid px-10">
-                                <h1 class="font-bold text-2xl mx-auto">...</h1>
+                            <div id="respuesta-check" class="grid px-10 grid-rows-3 gap-2 grid-flow-col" >
+                                
+                                <h1 class="font-bold text-2xl mx-auto ">...</h1>
 
                             </div>
 
@@ -132,7 +133,7 @@ function mostrar() {
         con++;
     } else {
         respuesta_check.innerHTML =
-            '<?php $C = 0; while($row = $resultado->fetch_array(MYSQLI_ASSOC)) { $C++; $res = $row['descripcion_respuesta']; echo '<div class = "flex gap-5 items-center text-2xl font-bold mb-5" > -'.$res.'</div>'; } ?>';
+            '<?php $C = 0; while($row = $resultado->fetch_array(MYSQLI_ASSOC)) { $C++; $res = $row['descripcion_respuesta']; echo '<div class = "flex gap-5 items-center text-2xl font-bold border p-2 justify-center" >'.$res.'</div>'; } ?>';
         con = 0;
     }
 
@@ -151,8 +152,11 @@ function contador(conta) {
     var id = setInterval(function() {
         console.log(n);
         conta.innerHTML = '<h1 class="font-bold text-2xl">00 : 0' + n + ' seg</h1>';
+        if(n>9) {
+            conta.innerHTML = '<h1 class="font-bold text-2xl">00 : ' + n + ' seg</h1>';
+        }
         n++;
-        if (n == 9) {
+        if (n == 11) {
             clearInterval(id);
 
         }

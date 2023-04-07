@@ -23,7 +23,7 @@
                 </div>
                 
             </a>
-            <a href="table.php">
+            <a href="table.php?id=1">
                 
                 <div class="btn rounded-full w-20 flex justify-center p-3">
                     <i class="ti ti-file-spreadsheet"></i>

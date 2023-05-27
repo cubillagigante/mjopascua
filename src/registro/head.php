@@ -3,8 +3,9 @@
     <title>MJO - PASCUA</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../../public/tailwind.css">
+    <link rel="stylesheet" href="../../public/css/tailwin.css">
     <link rel="stylesheet" href="../../webfont/tabler-icons.css">
+    
     <script src="../../script/npm/jquery.js"></script>
     <style type="text/css">
 

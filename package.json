@@ -19,5 +19,9 @@
   "homepage": "https://github.com/cubillagigante/mjopascua#readme",
   "devDependencies": {
     "tailwindcss": "^3.2.7"
+  },
+  "dependencies": {
+    "html5-qrcode": "^2.3.8",
+    "jsqr": "^1.4.0"
   }
 }

@@ -3,9 +3,11 @@
     <title>MJO - PASCUA</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../../public/tailwind.css">
+    <link rel="stylesheet" href="../../public/css/tailwin.css">
     <link rel="stylesheet" href="../../webfont/tabler-icons.css">
+    <script src="../../script/npm/qrcode.min.js"></script>
     <script src="../../script/npm/jquery.js"></script>
+    <script src="../../node_modules/html5-qrcode/html5-qrcode.min.js"></script>
     <style type="text/css">
 
     .btn {
